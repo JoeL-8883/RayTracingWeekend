@@ -21,10 +21,24 @@ class ray {
 
         point3 origin() const { return orig; }
         vec3 direction() const { return dir; }
+    
     public:
         point3 orig;
         vec3 dir;
-    
 };
+
+// Print the equation of a ray
+inline std::ostream& operator<<(std::ostream &os, ray &r) {
+    os << 
+        "P = [" << 
+        r.origin()[0] << "," <<
+        r.origin()[1] << "," <<
+        r.origin()[2] << "]" <<
+        " + t[" << 
+        r.direction()[0] << "," <<
+        r.direction()[1] << "," <<
+        r.direction()[2] << "]";
+    return os;
+}
 
 #endif
